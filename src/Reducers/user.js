@@ -16,7 +16,6 @@ export const users = (state = initialData, action) => {
         case ACTION_TYPES.USER_LOGIN_REQUEST:
             return { ...state, loader: true }
         case ACTION_TYPES.USER_LOGIN_SUCCESS: {
-            localStorage.setItem("profile", JSON.stringify({ ...action?.payload }));
             return { ...state, loader: false, isLogedIn: true, user: action?.payload }
         }
         case ACTION_TYPES.USER_LOGIN_FAILED: {
@@ -27,7 +26,6 @@ export const users = (state = initialData, action) => {
         case ACTION_TYPES.USER_REGISTER_REQUEST:
             return { ...state, loader: true }
         case ACTION_TYPES.USER_REGISTER_SUCCESS: {
-            localStorage.setItem("profile", JSON.stringify({ ...action?.payload }));
             return { ...state, loader: false, isLogedIn: true, user: action?.payload }
         }
         case ACTION_TYPES.USER_REGISTER_FAILED: {
